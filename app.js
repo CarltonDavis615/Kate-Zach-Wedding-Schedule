@@ -720,7 +720,6 @@ const packUpItems = [
 
 const ownerFilter = document.querySelector("#ownerFilter");
 const searchBox = document.querySelector("#searchBox");
-const watchlistCards = document.querySelector("#watchlistCards");
 const nextCards = document.querySelector("#nextCards");
 const scheduleList = document.querySelector("#scheduleList");
 const itemsList = document.querySelector("#itemsList");
@@ -738,8 +737,15 @@ const dateLookup = {
 function eventMatches(event) {
   const ownerValue = ownerFilter.value;
   const searchValue = searchBox.value.trim().toLowerCase();
-  const ownerMatch = ownerValue === "all" || event.owner === ownerValue;
   const haystack = `${event.date} ${event.time} ${event.title} ${event.owner} ${event.category} ${event.place} ${event.note}`.toLowerCase();
+  const personFilters = {
+    Kate: ["kate", "bride"],
+    Sloan: ["sloan"],
+    Kerri: ["kerri", "mob", "mother of bride", "mother of the bride"]
+  };
+  const ownerMatch = personFilters[ownerValue]
+    ? personFilters[ownerValue].some((term) => haystack.includes(term))
+    : ownerValue === "all" || event.owner === ownerValue;
   return ownerMatch && (!searchValue || haystack.includes(searchValue));
 }
 
@@ -1022,9 +1028,7 @@ function eventMarkup(event) {
 
 function renderEvents() {
   const filtered = events.filter(eventMatches).sort(byScheduleTime);
-  const carltonEvents = events.filter((event) => event.owner === "Carlton").sort(byScheduleTime);
 
-  watchlistCards.innerHTML = carltonEvents.map(eventMarkup).join("");
   scheduleList.innerHTML = filtered.length
     ? filtered.map(eventMarkup).join("")
     : `<div class="empty">No items match that filter yet.</div>`;

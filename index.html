@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kate Zach Wedding Schedule</title>
-    <link rel="stylesheet" href="styles.css?v=20260616-3" />
+    <link rel="stylesheet" href="styles.css?v=20260616-7" />
   </head>
   <body>
     <header class="app-header">
@@ -19,10 +19,9 @@
       <nav class="tabs" aria-label="Views">
         <button class="tab is-active" data-view="schedule">Full Schedule</button>
         <button class="tab" data-view="today">Now / Next</button>
-        <button class="tab" data-view="watchlist">Carlton's Tasks</button>
         <button class="tab" data-view="items">Items</button>
         <button class="tab" data-view="places">Places</button>
-        <button class="tab" data-view="pdf">PDF Backup</button>
+        <button class="tab" data-view="pdf">Schedule PDF</button>
       </nav>
 
       <section class="toolbar" aria-label="Schedule filters">
@@ -31,23 +30,17 @@
           <select id="ownerFilter">
             <option value="all">Everyone</option>
             <option value="Carlton">Carlton</option>
+            <option value="Kate">Kate</option>
+            <option value="Kerri">Kerri</option>
+            <option value="Sloan">Sloan</option>
             <option value="Jade">Jade</option>
             <option value="Family">Family</option>
-            <option value="Vendor">Vendors</option>
           </select>
         </label>
         <label>
           <span>Search</span>
           <input id="searchBox" type="search" placeholder="cake, tux, photos, venue..." />
         </label>
-      </section>
-
-      <section id="watchlist" class="view">
-        <div class="section-title">
-          <h2>Carlton's Tasks</h2>
-          <p>The handful of things that should stay in your peripheral vision.</p>
-        </div>
-        <div id="watchlistCards" class="timeline"></div>
       </section>
 
       <section id="today" class="view">
@@ -109,6 +102,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260616-3"></script>
+    <script src="app.js?v=20260616-7"></script>
   </body>
 </html>
