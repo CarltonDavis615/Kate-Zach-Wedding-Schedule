@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kate Zach Wedding Schedule</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">July 18, 2026</p>
+        <h1>Kate Zach Wedding Schedule</h1>
+        <p class="subhead">Carlton's father-of-the-bride watchlist, Jade's tasks, and the full weekend schedule in one place.</p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="tabs" aria-label="Views">
+        <button class="tab is-active" data-view="schedule">Full Schedule</button>
+        <button class="tab" data-view="today">Now / Next</button>
+        <button class="tab" data-view="watchlist">Carlton's Tasks</button>
+        <button class="tab" data-view="items">Items</button>
+        <button class="tab" data-view="places">Places</button>
+        <button class="tab" data-view="pdf">PDF Backup</button>
+      </nav>
+
+      <section class="toolbar" aria-label="Schedule filters">
+        <label>
+          <span>Filter</span>
+          <select id="ownerFilter">
+            <option value="all">Everyone</option>
+            <option value="Carlton">Carlton</option>
+            <option value="Jade">Jade</option>
+            <option value="Family">Family</option>
+            <option value="Vendor">Vendors</option>
+          </select>
+        </label>
+        <label>
+          <span>Search</span>
+          <input id="searchBox" type="search" placeholder="cake, tux, photos, venue..." />
+        </label>
+      </section>
+
+      <section id="watchlist" class="view">
+        <div class="section-title">
+          <h2>Carlton's Tasks</h2>
+          <p>The handful of things that should stay in your peripheral vision.</p>
+        </div>
+        <div id="watchlistCards" class="timeline"></div>
+      </section>
+
+      <section id="today" class="view">
+        <div class="section-title">
+          <h2>Now / Next</h2>
+          <p>Uses this device's clock and refreshes automatically.</p>
+        </div>
+        <div id="clockStatus" class="clock-status"></div>
+        <div id="nextCards" class="timeline"></div>
+      </section>
+
+      <section id="schedule" class="view is-active">
+        <div class="section-title">
+          <h2>Full Schedule</h2>
+          <p>The PDF timeline can be added here as events are confirmed.</p>
+        </div>
+        <div id="scheduleList" class="timeline"></div>
+      </section>
+
+      <section id="items" class="view">
+        <div class="section-title">
+          <h2>Davis and Cole Personal Items</h2>
+          <p>Pack-up and handoff reference for the end of the night.</p>
+        </div>
+        <div id="itemsList" class="item-grid"></div>
+      </section>
+
+      <section id="pdf" class="view">
+        <div class="section-title">
+          <h2>Original PDF Backup</h2>
+          <p>The four original schedule pages, preserved as a backup reference.</p>
+        </div>
+        <div class="pdf-pages">
+          <figure>
+            <img src="assets/pdf-pages/page-1.png" alt="Original schedule PDF page 1" />
+            <figcaption>Page 1 of 4</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/pdf-pages/page-2.png" alt="Original schedule PDF page 2" />
+            <figcaption>Page 2 of 4</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/pdf-pages/page-3.png" alt="Original schedule PDF page 3" />
+            <figcaption>Page 3 of 4</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/pdf-pages/page-4.png" alt="Original schedule PDF page 4" />
+            <figcaption>Page 4 of 4</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="places" class="view">
+        <div class="section-title">
+          <h2>Places</h2>
+          <p>Addresses and phone numbers you should not have to dig for.</p>
+        </div>
+        <div id="placeCards" class="place-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

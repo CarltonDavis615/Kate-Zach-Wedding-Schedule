@@ -1,0 +1,1065 @@
+const events = [
+  {
+    date: "Monday, July 13",
+    time: "12:00 PM",
+    title: "Bride drops off personal items at Engaged",
+    owner: "Family",
+    priority: "normal",
+    category: "Setup",
+    place: "Engaged Wedding Library",
+    note: "1018 Oxmoor Road, Homewood, AL 35209."
+  },
+  {
+    date: "Thursday, July 16",
+    time: "Before noon",
+    title: "Pack wedding weekend essentials",
+    owner: "Carlton",
+    priority: "important",
+    category: "Travel",
+    place: "Nashville",
+    note: "Keep tux pickup, Airbnb address, ceremony clothes, toast notes, and father-of-the-bride items together."
+  },
+  {
+    date: "Thursday, July 16",
+    time: "Noon",
+    title: "Leave Nashville for Birmingham",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Travel",
+    place: "Nashville to Birmingham",
+    note: "Carlton and Jade plan to leave around noon and spend Thursday night at the Airbnb at 1517 14th Street South."
+  },
+  {
+    date: "Thursday, July 16",
+    time: "After arrival",
+    title: "Pick up tux",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Wardrobe",
+    place: "Mr. Burch Formal Wear",
+    note: "Call if timing gets tight: +1 (205) 871-3589."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "After 11:00 AM",
+    title: "Pick up coconut cake",
+    owner: "Jade",
+    priority: "critical",
+    category: "Cake",
+    place: "Chez Fonfon",
+    note: "Pick up 1 coconut cake. Chez Fonfon opens at 11:00 AM."
+  },
+  {
+    date: "Friday, July 17",
+    time: "5:00 PM",
+    title: "Rehearsal",
+    owner: "Family",
+    priority: "important",
+    category: "Rehearsal",
+    place: "The Farrell",
+    note: "2719 19th St S, Homewood, AL 35209."
+  },
+  {
+    date: "Friday, July 17",
+    time: "6:00 PM",
+    title: "Rehearsal dinner",
+    owner: "Family",
+    priority: "important",
+    category: "Dinner",
+    place: "The Cyprus Room at The Fennec",
+    note: "1630 2nd Ave S, Birmingham, AL 35233."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "8:00 AM",
+    title: "Venue open for vendor setup",
+    owner: "Vendor",
+    priority: "important",
+    category: "Venue",
+    place: "The Farrell",
+    note: "Decor to Adore, Delta Florals, and Decor to Adore linens. Venue access begins at 8:00 AM."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "8:30 AM",
+    title: "Bride and bridesmaids meet up",
+    owner: "Family",
+    priority: "normal",
+    category: "Getting Ready",
+    place: "The Airbnb",
+    note: "1517 14th Street South, Birmingham, AL 35205. Breakfast and lunch provided by Jane Allison Crewse, 615-512-6503. Mackenzie Teter arrives and sets up."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "9:00 AM",
+    title: "Hair and makeup begins",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "Hair and makeup schedule runs from 9:00 AM to 1:00 PM."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "9:00 AM",
+    title: "Hair: Sloan and Katelyn",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "9:00 AM hair appointments for Sloan and Katelyn at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "9:30 AM",
+    title: "Hair: McClain and Hannah",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "9:30 AM hair appointments for McClain and Hannah at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "10:00 AM",
+    title: "Hair: Christine; makeup: Sloan",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "10:00 AM hair appointment for Christine and makeup appointment for Sloan at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "10:30 AM",
+    title: "Makeup: Katelyn and Sarah",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "10:30 AM makeup appointments for Katelyn and Sarah at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:00 AM",
+    title: "Bride hair and makeup",
+    owner: "Family",
+    priority: "important",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "Bride is scheduled for both hair and makeup."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:30 AM",
+    title: "Bride hair and makeup",
+    owner: "Family",
+    priority: "important",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "Bride is scheduled for both hair and makeup."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "12:00 PM",
+    title: "Hair: Kat; makeup: Christine",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "12:00 PM hair appointment for Kat and makeup appointment for Christine at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "12:30 PM",
+    title: "Makeup: Kat",
+    owner: "Family",
+    priority: "normal",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "12:30 PM makeup appointment for Kat at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:00 PM",
+    title: "Hair and makeup complete",
+    owner: "Vendor",
+    priority: "important",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "Hair and makeup complete for both columns."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:00 AM",
+    title: "Groom and groomsmen meet up",
+    owner: "Family",
+    priority: "normal",
+    category: "Getting Ready",
+    place: "Groomsmens' House",
+    note: "3015 Parkridge Drive Apt 1. Lunch provided by MOG, 205-243-6581."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:00 AM",
+    title: "Bouquets and boutonnieres delivered",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Floral",
+    place: "The Farrell",
+    note: "Delivered to 2719 19th St S, Homewood, AL 35209."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "12:30 PM",
+    title: "Photographers arrive",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Photography",
+    place: "The Airbnb",
+    note: "Dacy Lee Photography arrives at 1517 14th Street South."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "12:30 PM",
+    title: "Getting ready and detail photos",
+    owner: "Family",
+    priority: "normal",
+    category: "Photography",
+    place: "The Airbnb",
+    note: "Getting ready and detail photos begin at The Airbnb."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "12:45 PM",
+    title: "MOG gets dressed",
+    owner: "Family",
+    priority: "normal",
+    category: "Wardrobe",
+    place: "Getting ready location",
+    note: "Mother of the Groom gets dressed before the 1:15 PM groom and groomsmen dressing block."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:00 PM",
+    title: "Bride gets dressed",
+    owner: "Family",
+    priority: "important",
+    category: "Wardrobe",
+    place: "The Airbnb",
+    note: "Mother of Bride and Sloan Wyse help bride with jewelry and shoes for photos."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:15 PM",
+    title: "Groom and groomsmen get dressed",
+    owner: "Family",
+    priority: "normal",
+    category: "Wardrobe",
+    place: "Groomsmens' House",
+    note: "FOG Stacey pins boutonniere on groom for photos."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:30 PM",
+    title: "Bridesmaids get dressed",
+    owner: "Family",
+    priority: "normal",
+    category: "Wardrobe",
+    place: "The Airbnb",
+    note: "Bridesmaids get dressed at The Airbnb after the bride gets dressed."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:45 PM",
+    title: "First look with Father of the Bride",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Photography",
+    place: "The Airbnb",
+    note: "Carlton should be ready and nearby before this time."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "2:00 PM",
+    title: "Bride's family photos and bridesmaids",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Photography",
+    place: "The Airbnb",
+    note: "Father-of-the-bride family photo window."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "2:30 PM",
+    title: "Deliver coconut cake to venue",
+    owner: "Jade",
+    priority: "critical",
+    category: "Cake",
+    place: "The Farrell",
+    note: "Cake needs to be at The Farrell by 2:30 PM. PDF notes cake stand provided by bride."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "2:30 PM",
+    title: "Wedding coordinator arrives",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Coordination",
+    place: "The Farrell",
+    note: "Symone Shaw-Denton arrives at The Farrell."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "2:45 PM",
+    title: "Groom and groomsmen arrive",
+    owner: "Family",
+    priority: "normal",
+    category: "Arrival",
+    place: "The Farrell",
+    note: "Groom party arrives at 2719 19th St S."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:00 PM",
+    title: "Classic car arrives at The Airbnb",
+    owner: "Vendor",
+    priority: "important",
+    category: "Transportation",
+    place: "The Airbnb",
+    note: "Coats Classic Cars arrives at 1517 14th Street South."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:00 PM",
+    title: "DJ Lee arrives",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Entertainment",
+    place: "The Farrell",
+    note: "DJ arrives at 2719 19th St S."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:00 PM",
+    title: "Groom and groomsmen photos",
+    owner: "Family",
+    priority: "normal",
+    category: "Photography",
+    place: "The Farrell",
+    note: "Groom party photos at the venue."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:15 PM",
+    title: "Classic car takes bride and Father of the Bride to The Farrell",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Transportation",
+    place: "The Airbnb to The Farrell",
+    note: "Pickup: 1517 14th Street South. Drop off: 2719 19th St S."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:30 PM",
+    title: "Groom's family photos",
+    owner: "Family",
+    priority: "normal",
+    category: "Photography",
+    place: "The Farrell",
+    note: "Groom's family photos at The Farrell before all pre-ceremony photos wrap at 4:30 PM."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:45 PM",
+    title: "Bride and bridesmaids travel to The Farrell",
+    owner: "Family",
+    priority: "important",
+    category: "Transportation",
+    place: "The Airbnb to The Farrell",
+    note: "Travel window from getting-ready location to the venue."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:00 PM",
+    title: "Catering and bartending arrive",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Catering",
+    place: "The Farrell",
+    note: "La Paz arrives at the venue."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:00 PM",
+    title: "Ceremony musicians arrive",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Entertainment",
+    place: "The Farrell",
+    note: "Verite Strings arrives at the venue."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:00 PM",
+    title: "DJ meal ready",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Catering",
+    place: "The Farrell",
+    note: "One meal provided by La Paz."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:15 PM",
+    title: "Ceremony and reception spaces guest ready",
+    owner: "Vendor",
+    priority: "important",
+    category: "Venue",
+    place: "The Farrell",
+    note: "Final readiness checkpoint before guest arrival."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:30 PM",
+    title: "Prelude",
+    owner: "Vendor",
+    priority: "important",
+    category: "Ceremony",
+    place: "The Farrell",
+    note: "Officiant: Steve Yeld. Music by Verite Strings. Mic for officiant provided by DJ. Groomsmen are ushers."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "4:30 PM",
+    title: "All pre-ceremony photos complete",
+    owner: "Family",
+    priority: "important",
+    category: "Photography",
+    place: "The Farrell",
+    note: "All pre-ceremony photos should be complete before the 5:00 PM ceremony."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "5:00 PM - 5:30 PM",
+    title: "Ceremony",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Ceremony",
+    place: "The Farrell",
+    note: "Father-of-the-bride attention point. Ceremony at 2719 19th St S."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "5:30 PM",
+    title: "Ceremony flip",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Venue",
+    place: "The Farrell",
+    note: "Bridesmaids bouquets placed on highboy tables. Decor to Adore removes draping and resets tables. Florist resets florals as needed."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "5:35 PM",
+    title: "Extended family photos",
+    owner: "Carlton",
+    priority: "important",
+    category: "Photography",
+    place: "The Farrell",
+    note: "Stay photo-ready after the ceremony."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "5:45 PM",
+    title: "Cocktail hour begins",
+    owner: "Family",
+    priority: "normal",
+    category: "Reception",
+    place: "The Farrell",
+    note: "Bar opens to guests. Music played through venue speakers."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:00 PM - 6:30 PM",
+    title: "Bride and groom private meal",
+    owner: "Family",
+    priority: "normal",
+    category: "Reception",
+    place: "Bridal suite",
+    note: "Bride's preferred drink: rose or signature cocktail. Groom's preferred drink: signature cocktail or beer."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:30 PM",
+    title: "Reception begins",
+    owner: "Family",
+    priority: "important",
+    category: "Reception",
+    place: "The Farrell",
+    note: "Guests enter reception space."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:40 PM",
+    title: "Bride and groom announced into reception",
+    owner: "Family",
+    priority: "important",
+    category: "Reception",
+    place: "The Farrell",
+    note: "Announced as Mr. and Mrs. Cole."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:42 PM",
+    title: "Wedding party dances",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Reception",
+    place: "The Farrell",
+    note: "DJ plays 90 seconds of songs. Bride and Groom: This Will Be by Natalie Cole. Father and Bride: I Say a Little Prayer by Aretha Franklin. Mother and Groom: My Wish by Rascal Flatts."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:50 PM",
+    title: "Toast by Father of the Bride",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Toast",
+    place: "The Farrell",
+    note: "Carlton toast. Keep notes ready before reception announcements."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:52 PM",
+    title: "Bride and groom cut bride's cake",
+    owner: "Family",
+    priority: "important",
+    category: "Cake",
+    place: "The Farrell",
+    note: "Save top tier of bride's cake. Cake not served to guests."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "6:55 PM",
+    title: "Buffet opens",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Catering",
+    place: "The Farrell",
+    note: "Vendors go through buffet line: two planners and two photographers."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "7:30 PM - 8:30 PM",
+    title: "Bride and groom photos outside",
+    owner: "Family",
+    priority: "normal",
+    category: "Photography",
+    place: "Outside The Farrell",
+    note: "Bride and groom photos outside The Farrell during the reception."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "9:00 PM",
+    title: "Late-night snack pass",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Catering",
+    place: "The Farrell",
+    note: "Cookie Fix."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "9:00 PM",
+    title: "Bouquet toss",
+    owner: "Family",
+    priority: "normal",
+    category: "Reception",
+    place: "The Farrell",
+    note: "Bouquet toss at The Farrell, same time block as the late-night Cookie Fix snack pass."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "10:00 PM",
+    title: "Reception stops and guests head outside for sparkler exit",
+    owner: "Family",
+    priority: "important",
+    category: "Exit",
+    place: "The Farrell",
+    note: "Bride and groom leave in classic car for private residence at 3015 Parkridge Dr."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "10:30 PM - 11:30 PM",
+    title: "Vendor cleanup and breakdown",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Cleanup",
+    place: "The Farrell",
+    note: "Personal items given to Kerri Foster, Carlton Davis, Jennifer Cole, and Stacey Cole."
+  },
+  {
+    date: "Sunday, July 19",
+    time: "Sunday, before leaving Birmingham",
+    title: "Return tux or leave it with someone",
+    owner: "Carlton",
+    priority: "critical",
+    category: "Wardrobe",
+    place: "Birmingham",
+    note: "Day after the wedding: leave the tux with someone in Birmingham or drop it off on the way out of town. Do not assume Mr. Burch Formal Wear is open on Sunday."
+  }
+];
+
+const places = [
+  {
+    name: "The Farrell",
+    type: "Wedding venue",
+    address: "2719 19th St S, Homewood, AL 35209",
+    phone: "Susan Zuber: 205-907-4222",
+    detail: "Email: 2719thefarrell@gmail.com. Venue access starts wedding day at 8:00 AM.",
+    maps: "https://www.google.com/maps/search/?api=1&query=2719+19th+St+S+Homewood+AL+35209"
+  },
+  {
+    name: "The Airbnb",
+    type: "Getting ready",
+    address: "1517 14th Street South, Birmingham, AL 35205",
+    phone: "Bride and bridesmaids meet there at 8:30 AM.",
+    detail: "Photographers arrive here at 12:30 PM. Classic car picks up bride and Carlton here at 3:15 PM.",
+    maps: "https://www.google.com/maps/search/?api=1&query=1517+14th+Street+South+Birmingham+AL+35205"
+  },
+  {
+    name: "Groomsmens' House",
+    type: "Groom getting ready",
+    address: "3015 Parkridge Drive Apt 1",
+    phone: "Groom and groomsmen meet there at 11:00 AM.",
+    detail: "Bride and groom leave in classic car for this address after the sparkler exit.",
+    maps: "https://www.google.com/maps/search/?api=1&query=3015+Parkridge+Drive+Birmingham+AL"
+  },
+  {
+    name: "Mr. Burch Formal Wear",
+    type: "Tux pickup",
+    address: "2829 Cahaba Rd, Birmingham, AL 35223",
+    phone: "+1 (205) 871-3589",
+    detail: "Carlton tux pickup on Thursday after arrival.",
+    maps: "https://www.google.com/maps/search/?api=1&query=2829+Cahaba+Rd+Birmingham+AL+35223"
+  },
+  {
+    name: "Chez Fonfon",
+    type: "Coconut cake pickup",
+    address: "2007 11th Ave S, Birmingham, AL 35205",
+    phone: "Opens Saturday at 11:00 AM",
+    detail: "Jade picks up 1 coconut cake Saturday and delivers it to The Farrell by 2:30 PM.",
+    maps: "https://www.google.com/maps/search/?api=1&query=2007+11th+Ave+S+Birmingham+AL+35205"
+  },
+  {
+    name: "The Cyprus Room at The Fennec",
+    type: "Rehearsal dinner",
+    address: "1630 2nd Ave S, Birmingham, AL 35233",
+    phone: "Friday, July 17 at 6:00 PM",
+    detail: "Rehearsal dinner location.",
+    maps: "https://www.google.com/maps/search/?api=1&query=1630+2nd+Ave+S+Birmingham+AL+35233"
+  },
+  {
+    name: "Engaged Wedding Library",
+    type: "Personal item dropoff",
+    address: "1018 Oxmoor Road, Homewood, AL 35209",
+    phone: "Monday, July 13 at 12:00 PM",
+    detail: "Bride drops off personal items.",
+    maps: "https://www.google.com/maps/search/?api=1&query=1018+Oxmoor+Road+Homewood+AL+35209"
+  }
+];
+
+const contacts = [
+  "Wedding coordinator: Symone Shaw-Denton, 205-902-0826",
+  "Officiant: Steve Yeld, 205-401-0224",
+  "Hair and makeup: Mackenzie Teter, 205-305-5046",
+  "Photography: Dacy Lee Photography, 205-222-8838, dacyleephotography@gmail.com",
+  "Entertainment: Verite Strings, Laura Raymond, 601-955-7049, veritestrings@gmail.com",
+  "Entertainment: DJ Lee J, contact info not listed in PDF",
+  "Floral: Delta Flowers, Lori Beasley, 205-504-0871, deltaflowershvr@gmail.com",
+  "Catering: La Paz, Jill Williams, 205-879-2286",
+  "Cake: Chez Fon Fon, contact info not listed in PDF",
+  "Rentals: Decor to Adore, Laura Williams, 205-637-8695, laura@decortoadore.com",
+  "Transportation: Coats Classic Cars, Kirsten Hansen-Dreijer, 205-413-0480, kirsten@coatscars.com"
+];
+
+const pdfNotes = [
+  "Bride getting ready address: 1517 14th Street South Birmingham, AL 35205",
+  "Photo location: 2719 19th St S, Homewood, AL 35209",
+  "Ceremony and reception address: 2719 19th St S, Homewood, AL 35209",
+  "Wedding coordinator: Symone Shaw-Denton, 205-902-0826",
+  "Guest count: 131"
+];
+
+const personalItems = [
+  "Guest Book and Pens",
+  "Card Box or Tray",
+  "Menu Cards - At every place setting",
+  "Escort Cards - On escort card table",
+  "Table Numbers",
+  "Cake Knife and Server - Bring out with cake",
+  "Toasting Flutes",
+  "Special Champagne Bottle",
+  "Decorative Cake Topper",
+  "Personalized Cups",
+  "Personalized Koozies and Baskets x2",
+  "Cocktail Napkins",
+  "Sparklers, Sand Bucket, Lighters for Send-Off",
+  "Cake Stand",
+  "Reserved Table Sign",
+  "Bar Menus x2"
+];
+
+const packUpItems = [
+  "Bride's Bouquet",
+  "Bride's Cake",
+  "Gifts and Cards",
+  "Leftover Food"
+];
+
+const ownerFilter = document.querySelector("#ownerFilter");
+const searchBox = document.querySelector("#searchBox");
+const watchlistCards = document.querySelector("#watchlistCards");
+const nextCards = document.querySelector("#nextCards");
+const scheduleList = document.querySelector("#scheduleList");
+const itemsList = document.querySelector("#itemsList");
+const placeCards = document.querySelector("#placeCards");
+const clockStatus = document.querySelector("#clockStatus");
+
+const dateLookup = {
+  "Monday, July 13": "2026-07-13",
+  "Thursday, July 16": "2026-07-16",
+  "Friday, July 17": "2026-07-17",
+  "Saturday, July 18": "2026-07-18",
+  "Sunday, July 19": "2026-07-19"
+};
+
+function eventMatches(event) {
+  const ownerValue = ownerFilter.value;
+  const searchValue = searchBox.value.trim().toLowerCase();
+  const ownerMatch = ownerValue === "all" || event.owner === ownerValue;
+  const haystack = `${event.date} ${event.time} ${event.title} ${event.owner} ${event.category} ${event.place} ${event.note}`.toLowerCase();
+  return ownerMatch && (!searchValue || haystack.includes(searchValue));
+}
+
+function startTimeFromLabel(timeLabel) {
+  if (timeLabel.includes("Before noon")) return "11:00 AM";
+  if (timeLabel.includes("Noon")) return "12:00 PM";
+  if (timeLabel.includes("After arrival")) return "4:00 PM";
+  if (timeLabel.includes("After 11:00 AM")) return "11:05 AM";
+  if (timeLabel.includes("Sunday, before leaving Birmingham")) return "10:00 AM";
+  const match = timeLabel.match(/(\d{1,2}:\d{2}\s*[AP]M)/i);
+  return match ? match[1].toUpperCase().replace(/\s+/, " ") : "9:00 AM";
+}
+
+function eventStart(event) {
+  const datePart = dateLookup[event.date];
+  const timePart = startTimeFromLabel(event.time);
+  return new Date(`${datePart} ${timePart}`);
+}
+
+function byScheduleTime(a, b) {
+  return eventStart(a) - eventStart(b);
+}
+
+function minutesUntil(event, now) {
+  return Math.round((eventStart(event).getTime() - now.getTime()) / 60000);
+}
+
+function formatRelative(minutes) {
+  if (minutes < -90) return "Earlier";
+  if (minutes < -5) return `${Math.abs(minutes)} min ago`;
+  if (minutes <= 5) return "Now";
+  if (minutes < 60) return `In ${minutes} min`;
+  if (minutes < 10080) {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return mins ? `In ${hours} hr ${mins} min` : `In ${hours} hr`;
+  }
+  const days = Math.floor(minutes / 1440);
+  return `In ${days} day${days === 1 ? "" : "s"}`;
+}
+
+function mapsLink(address) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+}
+
+function directionsLink(origin, destination) {
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
+}
+
+function locationForEvent(event) {
+  const place = event.place;
+
+  if (place === "The Airbnb to The Farrell") {
+    return {
+      name: "The Airbnb to The Farrell",
+      address: "Pickup: 1517 14th Street South, Birmingham, AL 35205. Dropoff: 2719 19th St S, Homewood, AL 35209",
+      maps: directionsLink("1517 14th Street South, Birmingham, AL 35205", "2719 19th St S, Homewood, AL 35209")
+    };
+  }
+
+  if (place === "Nashville to Birmingham") {
+    return {
+      name: "Nashville to Birmingham",
+      address: "Nashville, TN to Birmingham, AL",
+      maps: directionsLink("Nashville, TN", "Birmingham, AL")
+    };
+  }
+
+  if (place.includes("The Farrell") || place === "Bridal suite" || place === "Outside The Farrell") {
+    return {
+      name: place === "The Farrell" ? "The Farrell" : `${place} at The Farrell`,
+      address: "2719 19th St S, Homewood, AL 35209",
+      maps: mapsLink("2719 19th St S, Homewood, AL 35209")
+    };
+  }
+
+  if (place.includes("The Airbnb") || place === "Getting ready location") {
+    return {
+      name: place,
+      address: "1517 14th Street South, Birmingham, AL 35205",
+      maps: mapsLink("1517 14th Street South, Birmingham, AL 35205")
+    };
+  }
+
+  if (place.includes("Groomsmens' House")) {
+    return {
+      name: "Groomsmens' House",
+      address: "3015 Parkridge Drive Apt 1, Birmingham, AL",
+      maps: mapsLink("3015 Parkridge Drive Apt 1, Birmingham, AL")
+    };
+  }
+
+  if (place === "Mr. Burch Formal Wear") {
+    return {
+      name: "Mr. Burch Formal Wear",
+      address: "2829 Cahaba Rd, Birmingham, AL 35223",
+      maps: mapsLink("2829 Cahaba Rd, Birmingham, AL 35223")
+    };
+  }
+
+  if (place === "Chez Fonfon") {
+    return {
+      name: "Chez Fonfon",
+      address: "2007 11th Ave S, Birmingham, AL 35205",
+      maps: mapsLink("2007 11th Ave S, Birmingham, AL 35205")
+    };
+  }
+
+  if (place === "The Cyprus Room at The Fennec") {
+    return {
+      name: "The Cyprus Room at The Fennec",
+      address: "1630 2nd Ave S, Birmingham, AL 35233",
+      maps: mapsLink("1630 2nd Ave S, Birmingham, AL 35233")
+    };
+  }
+
+  if (place === "Engaged Wedding Library") {
+    return {
+      name: "Engaged Wedding Library",
+      address: "1018 Oxmoor Road, Homewood, AL 35209",
+      maps: mapsLink("1018 Oxmoor Road, Homewood, AL 35209")
+    };
+  }
+
+  if (place === "Birmingham") {
+    return {
+      name: "Birmingham",
+      address: "Birmingham, AL",
+      maps: mapsLink("Birmingham, AL")
+    };
+  }
+
+  if (place === "Nashville") {
+    return {
+      name: place,
+      address: "Nashville, TN",
+      maps: mapsLink("Nashville, TN")
+    };
+  }
+
+  return {
+    name: place,
+    address: "",
+    maps: ""
+  };
+}
+
+function locationMarkup(event) {
+  const location = locationForEvent(event);
+  const address = location.address ? `<span>${location.address}</span>` : "";
+  const link = location.maps ? `<a href="${location.maps}" target="_blank" rel="noreferrer">Open map</a>` : "";
+  return `
+    <div class="event-location">
+      <strong>${location.name}</strong>
+      ${address}
+      ${link}
+    </div>
+  `;
+}
+
+function contactItemMarkup(contact) {
+  const separator = contact.indexOf(":");
+  if (separator === -1) return `<li>${contact}</li>`;
+  const role = contact.slice(0, separator);
+  const detail = contact.slice(separator + 1).trim();
+  return `<li><strong>${role}:</strong> ${detail}</li>`;
+}
+
+function nowNextMarkup(event, now) {
+  const minutes = minutesUntil(event, now);
+  return `
+    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}">
+      <div>
+        <div class="time">${formatRelative(minutes)}</div>
+        <div class="owner">${event.date} - ${event.time}</div>
+      </div>
+      <div>
+        <h3>${event.title}</h3>
+        <p>${event.note}</p>
+        ${locationMarkup(event)}
+      </div>
+      <div class="meta">
+        <span class="pill">${event.owner}</span>
+        <span class="pill">${event.category}</span>
+      </div>
+    </article>
+  `;
+}
+
+function renderNowNext() {
+  const now = new Date();
+  const upcoming = events
+    .map((event) => ({ event, start: eventStart(event), minutes: minutesUntil(event, now) }))
+    .filter((item) => item.minutes >= -90)
+    .sort((a, b) => a.start - b.start)
+    .slice(0, 12);
+
+  clockStatus.innerHTML = `
+    <div>
+      <strong>Current device time</strong>
+      <span>${now.toLocaleString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}</span>
+    </div>
+    <div>
+      <strong>Mode</strong>
+      <span>${upcoming.some((item) => Math.abs(item.minutes) <= 5) ? "Something is happening now" : "Watching upcoming items"}</span>
+    </div>
+  `;
+
+  nextCards.innerHTML = upcoming.length
+    ? upcoming.map((item) => nowNextMarkup(item.event, now)).join("")
+    : `<div class="empty">Everything in the schedule is earlier than the current device time.</div>`;
+}
+
+function eventMarkup(event) {
+  return `
+    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}">
+      <div>
+        <div class="time">${event.date}</div>
+        <div class="owner">${event.time}</div>
+      </div>
+      <div>
+        <h3>${event.title}</h3>
+        <p>${event.note}</p>
+        ${locationMarkup(event)}
+      </div>
+      <div class="meta">
+        <span class="pill">${event.owner}</span>
+        <span class="pill">${event.category}</span>
+      </div>
+    </article>
+  `;
+}
+
+function renderEvents() {
+  const filtered = events.filter(eventMatches).sort(byScheduleTime);
+  const carltonEvents = events.filter((event) => event.owner === "Carlton").sort(byScheduleTime);
+
+  watchlistCards.innerHTML = carltonEvents.map(eventMarkup).join("");
+  scheduleList.innerHTML = filtered.length
+    ? filtered.map(eventMarkup).join("")
+    : `<div class="empty">No items match that filter yet.</div>`;
+  renderNowNext();
+}
+
+function renderPlaces() {
+  const placeMarkup = places.map((place) => `
+    <article class="place">
+      <div class="meta">
+        <span class="pill">${place.type}</span>
+      </div>
+      <h3>${place.name}</h3>
+      <p>${place.address}</p>
+      <p>${place.phone}</p>
+      <p>${place.detail}</p>
+      <a href="${place.maps}" target="_blank" rel="noreferrer">Open map</a>
+    </article>
+  `).join("");
+
+  const contactMarkup = `
+    <article class="place contact-list">
+      <div class="meta">
+        <span class="pill">Vendor contacts</span>
+      </div>
+      <h3>Key Contacts</h3>
+      <ul>
+        ${contacts.map(contactItemMarkup).join("")}
+      </ul>
+    </article>
+  `;
+
+  const notesMarkup = `
+    <article class="place contact-list">
+      <div class="meta">
+        <span class="pill">PDF notes</span>
+      </div>
+      <h3>Original Schedule Notes</h3>
+      <ul>
+        ${pdfNotes.map((note) => `<li>${note}</li>`).join("")}
+      </ul>
+    </article>
+  `;
+
+  placeCards.innerHTML = placeMarkup + contactMarkup + notesMarkup;
+}
+
+function renderItems() {
+  const personalMarkup = personalItems.map((item, index) => `
+    <article class="item-card">
+      <span>${index + 1}</span>
+      <p>${item}</p>
+    </article>
+  `).join("");
+
+  const packUpMarkup = `
+    <article class="item-card item-card-wide">
+      <span>Pack</span>
+      <p><strong>Additional items to pack up:</strong> ${packUpItems.join(", ")}.</p>
+    </article>
+    <article class="item-card item-card-wide">
+      <span>Handoff</span>
+      <p>Personal items may be given to Kerri Foster, Carlton Davis, Jennifer Cole, and Stacey Cole during vendor cleanup and breakdown.</p>
+    </article>
+  `;
+
+  itemsList.innerHTML = personalMarkup + packUpMarkup;
+}
+
+document.querySelectorAll(".tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach((item) => item.classList.remove("is-active"));
+    document.querySelectorAll(".view").forEach((view) => view.classList.remove("is-active"));
+    tab.classList.add("is-active");
+    document.querySelector(`#${tab.dataset.view}`).classList.add("is-active");
+  });
+});
+
+ownerFilter.addEventListener("change", renderEvents);
+searchBox.addEventListener("input", renderEvents);
+
+renderEvents();
+renderPlaces();
+renderItems();
+setInterval(renderNowNext, 60000);
