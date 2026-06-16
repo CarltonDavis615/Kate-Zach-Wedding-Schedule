@@ -759,6 +759,20 @@ function eventStart(event) {
   return new Date(`${datePart} ${timePart}`);
 }
 
+function endTimeFromLabel(timeLabel) {
+  const rangeMatch = timeLabel.match(/-\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
+  if (rangeMatch) return rangeMatch[1].toUpperCase().replace(/\s+/, " ");
+  if (timeLabel.includes("Before noon")) return "12:00 PM";
+  return null;
+}
+
+function eventEnd(event) {
+  const datePart = dateLookup[event.date];
+  const endTime = endTimeFromLabel(event.time);
+  if (endTime) return new Date(`${datePart} ${endTime}`);
+  return new Date(eventStart(event).getTime() + 30 * 60000);
+}
+
 function byScheduleTime(a, b) {
   return eventStart(a) - eventStart(b);
 }
@@ -779,6 +793,18 @@ function formatRelative(minutes) {
   }
   const days = Math.floor(minutes / 1440);
   return `In ${days} day${days === 1 ? "" : "s"}`;
+}
+
+function formatNowNextTime(item) {
+  if (item.state === "ended") {
+    const minutesAgo = Math.abs(item.minutesAfterEnd);
+    if (minutesAgo < 60) return `Ended ${minutesAgo} min ago`;
+    const hours = Math.floor(minutesAgo / 60);
+    const mins = minutesAgo % 60;
+    return mins ? `Ended ${hours} hr ${mins} min ago` : `Ended ${hours} hr ago`;
+  }
+  if (item.state === "current") return "Now";
+  return formatRelative(item.minutesUntilStart);
 }
 
 function mapsLink(address) {
@@ -908,12 +934,12 @@ function contactItemMarkup(contact) {
   return `<li><strong>${role}:</strong> ${detail}</li>`;
 }
 
-function nowNextMarkup(event, now) {
-  const minutes = minutesUntil(event, now);
+function nowNextMarkup(item) {
+  const event = item.event;
   return `
-    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}">
+    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}" data-state="${item.state}">
       <div>
-        <div class="time">${formatRelative(minutes)}</div>
+        <div class="time">${formatNowNextTime(item)}</div>
         <div class="owner">${event.date} - ${event.time}</div>
       </div>
       <div>
@@ -931,11 +957,16 @@ function nowNextMarkup(event, now) {
 
 function renderNowNext() {
   const now = new Date();
-  const upcoming = events
-    .map((event) => ({ event, start: eventStart(event), minutes: minutesUntil(event, now) }))
-    .filter((item) => item.minutes >= -90)
-    .sort((a, b) => a.start - b.start)
-    .slice(0, 12);
+  const nowItems = events
+    .map((event) => {
+      const start = eventStart(event);
+      const end = eventEnd(event);
+      const minutesUntilStart = Math.round((start.getTime() - now.getTime()) / 60000);
+      const minutesAfterEnd = Math.round((now.getTime() - end.getTime()) / 60000);
+      const state = now < start ? "upcoming" : now <= end ? "current" : "ended";
+      return { event, start, end, minutesUntilStart, minutesAfterEnd, state };
+    })
+    .sort((a, b) => a.start - b.start);
 
   clockStatus.innerHTML = `
     <div>
@@ -944,13 +975,11 @@ function renderNowNext() {
     </div>
     <div>
       <strong>Mode</strong>
-      <span>${upcoming.some((item) => Math.abs(item.minutes) <= 5) ? "Something is happening now" : "Watching upcoming items"}</span>
+      <span>${nowItems.some((item) => item.state === "current") ? "Something is happening now" : "Watching the full remaining timeline"}</span>
     </div>
   `;
 
-  nextCards.innerHTML = upcoming.length
-    ? upcoming.map((item) => nowNextMarkup(item.event, now)).join("")
-    : `<div class="empty">Everything in the schedule is earlier than the current device time.</div>`;
+  nextCards.innerHTML = nowItems.map(nowNextMarkup).join("");
 }
 
 function eventMarkup(event) {

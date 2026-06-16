@@ -282,6 +282,19 @@ select {
   border-left-color: var(--blue);
 }
 
+.event[data-state="ended"] {
+  opacity: 0.48;
+  background: #f3f6fb;
+}
+
+.event[data-state="ended"] .time {
+  color: var(--muted);
+}
+
+.event[data-state="current"] {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18), 0 10px 35px rgba(20, 38, 34, 0.08);
+}
+
 .time {
   color: var(--ink);
   font-weight: 850;
