@@ -728,11 +728,11 @@ const placeCards = document.querySelector("#placeCards");
 const clockStatus = document.querySelector("#clockStatus");
 
 const dateLookup = {
-  "Monday, July 13": "2026-07-13",
-  "Thursday, July 16": "2026-07-16",
-  "Friday, July 17": "2026-07-17",
-  "Saturday, July 18": "2026-07-18",
-  "Sunday, July 19": "2026-07-19"
+  "Monday, July 13": { year: 2026, month: 6, day: 13 },
+  "Thursday, July 16": { year: 2026, month: 6, day: 16 },
+  "Friday, July 17": { year: 2026, month: 6, day: 17 },
+  "Saturday, July 18": { year: 2026, month: 6, day: 18 },
+  "Sunday, July 19": { year: 2026, month: 6, day: 19 }
 };
 
 function eventMatches(event) {
@@ -753,10 +753,26 @@ function startTimeFromLabel(timeLabel) {
   return match ? match[1].toUpperCase().replace(/\s+/, " ") : "9:00 AM";
 }
 
+function timeParts(timeLabel) {
+  const match = timeLabel.match(/(\d{1,2}):(\d{2})\s*([AP]M)/i);
+  if (!match) return { hours: 9, minutes: 0 };
+  let hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  const meridiem = match[3].toUpperCase();
+  if (meridiem === "PM" && hours !== 12) hours += 12;
+  if (meridiem === "AM" && hours === 12) hours = 0;
+  return { hours, minutes };
+}
+
+function dateAt(dateLabel, timeLabel) {
+  const date = dateLookup[dateLabel];
+  const time = timeParts(timeLabel);
+  return new Date(date.year, date.month, date.day, time.hours, time.minutes);
+}
+
 function eventStart(event) {
-  const datePart = dateLookup[event.date];
   const timePart = startTimeFromLabel(event.time);
-  return new Date(`${datePart} ${timePart}`);
+  return dateAt(event.date, timePart);
 }
 
 function endTimeFromLabel(timeLabel) {
@@ -767,9 +783,8 @@ function endTimeFromLabel(timeLabel) {
 }
 
 function eventEnd(event) {
-  const datePart = dateLookup[event.date];
   const endTime = endTimeFromLabel(event.time);
-  if (endTime) return new Date(`${datePart} ${endTime}`);
+  if (endTime) return dateAt(event.date, endTime);
   return new Date(eventStart(event).getTime() + 30 * 60000);
 }
 
@@ -796,6 +811,9 @@ function formatRelative(minutes) {
 }
 
 function formatNowNextTime(item) {
+  if (!Number.isFinite(item.minutesUntilStart) || !Number.isFinite(item.minutesAfterEnd)) {
+    return "Time unavailable";
+  }
   if (item.state === "ended") {
     const minutesAgo = Math.abs(item.minutesAfterEnd);
     if (minutesAgo < 60) return `Ended ${minutesAgo} min ago`;
@@ -974,8 +992,8 @@ function renderNowNext() {
       <span>${now.toLocaleString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}</span>
     </div>
     <div>
-      <strong>Mode</strong>
-      <span>${nowItems.some((item) => item.state === "current") ? "Something is happening now" : "Watching the full remaining timeline"}</span>
+      <strong>Status</strong>
+      <span>${nowItems.some((item) => item.state === "current") ? "Something is happening now" : "Showing upcoming and completed events"}</span>
     </div>
   `;
 
