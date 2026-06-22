@@ -7,7 +7,7 @@ const events = [
     priority: "normal",
     category: "Setup",
     place: "Engaged Wedding Library",
-    note: "1018 Oxmoor Road, Homewood, AL 35209."
+    note: "Drop off personal items at 1018 Oxmoor Road, Homewood, AL 35209."
   },
   {
     date: "Thursday, July 16",
@@ -27,7 +27,7 @@ const events = [
     priority: "critical",
     category: "Travel",
     place: "Nashville to Birmingham",
-    note: "Carlton and Jade plan to leave around noon and spend Thursday night at the Airbnb at 1517 14th Street South."
+    note: "Carlton and Jade plan to leave around noon and spend Thursday night at The Airbnb."
   },
   {
     date: "Thursday, July 16",
@@ -40,16 +40,6 @@ const events = [
     note: "Call if timing gets tight: +1 (205) 871-3589."
   },
   {
-    date: "Saturday, July 18",
-    time: "After 11:00 AM",
-    title: "Pick up coconut cake",
-    owner: "Jade",
-    priority: "critical",
-    category: "Cake",
-    place: "Chez Fonfon",
-    note: "Pick up 1 coconut cake. Chez Fonfon opens at 11:00 AM."
-  },
-  {
     date: "Friday, July 17",
     time: "5:00 PM",
     title: "Rehearsal",
@@ -57,7 +47,7 @@ const events = [
     priority: "important",
     category: "Rehearsal",
     place: "The Farrell",
-    note: "2719 19th St S, Homewood, AL 35209."
+    note: "Rehearsal at The Farrell."
   },
   {
     date: "Friday, July 17",
@@ -67,7 +57,7 @@ const events = [
     priority: "important",
     category: "Dinner",
     place: "The Cyprus Room at The Fennec",
-    note: "1630 2nd Ave S, Birmingham, AL 35233."
+    note: "Rehearsal dinner at 1630 2nd Ave S, Birmingham, AL 35233."
   },
   {
     date: "Saturday, July 18",
@@ -77,7 +67,7 @@ const events = [
     priority: "important",
     category: "Venue",
     place: "The Farrell",
-    note: "Decor to Adore, Delta Florals, and Decor to Adore linens. Venue access begins at 8:00 AM."
+    note: "Door code is not listed. Decor to Adore setup is scheduled 9:00 AM-12:00 PM. Delta Florals also sets up."
   },
   {
     date: "Saturday, July 18",
@@ -87,7 +77,7 @@ const events = [
     priority: "normal",
     category: "Getting Ready",
     place: "The Airbnb",
-    note: "1517 14th Street South, Birmingham, AL 35205. Breakfast and lunch provided by Jane Allison Crewse, 615-512-6503. Mackenzie Teter arrives and sets up."
+    note: "Breakfast and lunch provided by Jane Allison Crewse, 615-512-6503. Mackenzie Teter arrives and sets up."
   },
   {
     date: "Saturday, July 18",
@@ -107,7 +97,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "9:00 AM hair appointments for Sloan and Katelyn at The Airbnb."
+    note: "9:00 AM hair appointments for Sloan and Katelyn."
   },
   {
     date: "Saturday, July 18",
@@ -117,7 +107,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "9:30 AM hair appointments for McClain and Hannah at The Airbnb."
+    note: "9:30 AM hair appointments for McClain and Hannah."
   },
   {
     date: "Saturday, July 18",
@@ -127,7 +117,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "10:00 AM hair appointment for Christine and makeup appointment for Sloan at The Airbnb."
+    note: "10:00 AM hair appointment for Christine and makeup appointment for Sloan."
   },
   {
     date: "Saturday, July 18",
@@ -137,7 +127,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "10:30 AM makeup appointments for Katelyn and Sarah at The Airbnb."
+    note: "10:30 AM makeup appointments for Katelyn and Sarah."
   },
   {
     date: "Saturday, July 18",
@@ -148,6 +138,36 @@ const events = [
     category: "Hair and Makeup",
     place: "The Airbnb",
     note: "Bride is scheduled for both hair and makeup."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:00 AM",
+    title: "Groom and groomsmen meet up",
+    owner: "Family",
+    priority: "normal",
+    category: "Getting Ready",
+    place: "Groomsmens' House",
+    note: "Lunch provided by MOG, 205-243-6581."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "11:00 AM",
+    title: "Bouquets and boutonnieres delivered",
+    owner: "Vendor",
+    priority: "normal",
+    category: "Floral",
+    place: "The Farrell",
+    note: "Bouquets and boutonnieres delivered to The Farrell."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "After 11:00 AM",
+    title: "Pick up coconut cake",
+    owner: "Jade",
+    priority: "critical",
+    category: "Cake",
+    place: "Chez Fonfon",
+    note: "Pick up 1 coconut cake. Chez Fonfon opens at 11:00 AM."
   },
   {
     date: "Saturday, July 18",
@@ -167,7 +187,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "12:00 PM hair appointment for Kat and makeup appointment for Christine at The Airbnb."
+    note: "12:00 PM hair appointment for Kat and makeup appointment for Christine."
   },
   {
     date: "Saturday, July 18",
@@ -177,37 +197,7 @@ const events = [
     priority: "normal",
     category: "Hair and Makeup",
     place: "The Airbnb",
-    note: "12:30 PM makeup appointment for Kat at The Airbnb."
-  },
-  {
-    date: "Saturday, July 18",
-    time: "1:00 PM",
-    title: "Hair and makeup complete",
-    owner: "Vendor",
-    priority: "important",
-    category: "Hair and Makeup",
-    place: "The Airbnb",
-    note: "Hair and makeup complete for both columns."
-  },
-  {
-    date: "Saturday, July 18",
-    time: "11:00 AM",
-    title: "Groom and groomsmen meet up",
-    owner: "Family",
-    priority: "normal",
-    category: "Getting Ready",
-    place: "Groomsmens' House",
-    note: "3015 Parkridge Drive Apt 1. Lunch provided by MOG, 205-243-6581."
-  },
-  {
-    date: "Saturday, July 18",
-    time: "11:00 AM",
-    title: "Bouquets and boutonnieres delivered",
-    owner: "Vendor",
-    priority: "normal",
-    category: "Floral",
-    place: "The Farrell",
-    note: "Delivered to 2719 19th St S, Homewood, AL 35209."
+    note: "12:30 PM makeup appointment for Kat."
   },
   {
     date: "Saturday, July 18",
@@ -217,7 +207,7 @@ const events = [
     priority: "normal",
     category: "Photography",
     place: "The Airbnb",
-    note: "Dacy Lee Photography arrives at 1517 14th Street South."
+    note: "Dacy Lee Photography arrives."
   },
   {
     date: "Saturday, July 18",
@@ -227,7 +217,7 @@ const events = [
     priority: "normal",
     category: "Photography",
     place: "The Airbnb",
-    note: "Getting ready and detail photos begin at The Airbnb."
+    note: "Getting ready and detail photos begin."
   },
   {
     date: "Saturday, July 18",
@@ -236,8 +226,18 @@ const events = [
     owner: "Family",
     priority: "normal",
     category: "Wardrobe",
-    place: "Getting ready location",
-    note: "Mother of the Groom gets dressed before the 1:15 PM groom and groomsmen dressing block."
+    place: "Groomsmens' House",
+    note: "Mother of the Groom gets dressed before the groom and groomsmen dressing block."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "1:00 PM",
+    title: "Hair and makeup complete",
+    owner: "Vendor",
+    priority: "important",
+    category: "Hair and Makeup",
+    place: "The Airbnb",
+    note: "Hair and makeup complete."
   },
   {
     date: "Saturday, July 18",
@@ -267,7 +267,7 @@ const events = [
     priority: "normal",
     category: "Wardrobe",
     place: "The Airbnb",
-    note: "Bridesmaids get dressed at The Airbnb after the bride gets dressed."
+    note: "Bridesmaids get dressed after the bride."
   },
   {
     date: "Saturday, July 18",
@@ -292,12 +292,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "2:30 PM",
-    title: "Deliver coconut cake to venue",
+    title: "Cake delivered to The Farrell by Jade Novak",
     owner: "Jade",
     priority: "critical",
     category: "Cake",
     place: "The Farrell",
-    note: "Cake needs to be at The Farrell by 2:30 PM. PDF notes cake stand provided by bride."
+    note: "Deliver the coconut cake by 2:30 PM. Cake stand provided by the bride."
   },
   {
     date: "Saturday, July 18",
@@ -317,7 +317,7 @@ const events = [
     priority: "normal",
     category: "Arrival",
     place: "The Farrell",
-    note: "Groom party arrives at 2719 19th St S."
+    note: "Groom and groomsmen arrive at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -327,7 +327,7 @@ const events = [
     priority: "important",
     category: "Transportation",
     place: "The Airbnb",
-    note: "Coats Classic Cars arrives at 1517 14th Street South."
+    note: "Coats Classic Cars arrives at The Airbnb."
   },
   {
     date: "Saturday, July 18",
@@ -337,7 +337,7 @@ const events = [
     priority: "normal",
     category: "Entertainment",
     place: "The Farrell",
-    note: "DJ arrives at 2719 19th St S."
+    note: "DJ Lee J arrives at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -347,7 +347,7 @@ const events = [
     priority: "normal",
     category: "Photography",
     place: "The Farrell",
-    note: "Groom party photos at the venue."
+    note: "Groom and groomsmen photos at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -357,7 +357,7 @@ const events = [
     priority: "critical",
     category: "Transportation",
     place: "The Airbnb to The Farrell",
-    note: "Pickup: 1517 14th Street South. Drop off: 2719 19th St S."
+    note: "Pickup at The Airbnb and dropoff at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -367,7 +367,7 @@ const events = [
     priority: "normal",
     category: "Photography",
     place: "The Farrell",
-    note: "Groom's family photos at The Farrell before all pre-ceremony photos wrap at 4:30 PM."
+    note: "Groom's family photos at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -377,7 +377,7 @@ const events = [
     priority: "important",
     category: "Transportation",
     place: "The Airbnb to The Farrell",
-    note: "Travel window from getting-ready location to the venue."
+    note: "Travel from The Airbnb to The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -387,7 +387,7 @@ const events = [
     priority: "normal",
     category: "Catering",
     place: "The Farrell",
-    note: "La Paz arrives at the venue."
+    note: "La Paz catering and bartending arrive at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -397,7 +397,7 @@ const events = [
     priority: "normal",
     category: "Entertainment",
     place: "The Farrell",
-    note: "Verite Strings arrives at the venue."
+    note: "Verite Strings arrives at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -407,7 +407,7 @@ const events = [
     priority: "normal",
     category: "Catering",
     place: "The Farrell",
-    note: "One meal provided by La Paz."
+    note: "One DJ meal provided by La Paz."
   },
   {
     date: "Saturday, July 18",
@@ -427,7 +427,7 @@ const events = [
     priority: "important",
     category: "Ceremony",
     place: "The Farrell",
-    note: "Officiant: Steve Yeld. Music by Verite Strings. Mic for officiant provided by DJ. Groomsmen are ushers."
+    note: "Officiant: Steve Yeld, 205-401-0224. Music by Verite Strings. DJ provides the officiant microphone. Groomsmen serve as ushers."
   },
   {
     date: "Saturday, July 18",
@@ -437,27 +437,27 @@ const events = [
     priority: "important",
     category: "Photography",
     place: "The Farrell",
-    note: "All pre-ceremony photos should be complete before the 5:00 PM ceremony."
+    note: "All pre-ceremony photos should be complete before the ceremony."
   },
   {
     date: "Saturday, July 18",
     time: "5:00 PM - 5:30 PM",
     title: "Ceremony",
-    owner: "Carlton",
+    owner: "Family",
     priority: "critical",
     category: "Ceremony",
     place: "The Farrell",
-    note: "Father-of-the-bride attention point. Ceremony at 2719 19th St S."
+    note: "Ceremony at The Farrell."
   },
   {
     date: "Saturday, July 18",
-    time: "5:30 PM",
+    time: "5:30 PM - 6:30 PM",
     title: "Ceremony flip",
     owner: "Vendor",
-    priority: "normal",
+    priority: "important",
     category: "Venue",
     place: "The Farrell",
-    note: "Bridesmaids bouquets placed on highboy tables. Decor to Adore removes draping and resets tables. Florist resets florals as needed."
+    note: "Place bridesmaids bouquets on highboy tables. Decor to Adore removes draping and resets tables. Florist resets florals as needed. Engaged team sets place cards."
   },
   {
     date: "Saturday, July 18",
@@ -477,7 +477,7 @@ const events = [
     priority: "normal",
     category: "Reception",
     place: "The Farrell",
-    note: "Bar opens to guests. Music played through venue speakers."
+    note: "Bar opens to guests. Music plays through venue speakers."
   },
   {
     date: "Saturday, July 18",
@@ -487,7 +487,7 @@ const events = [
     priority: "normal",
     category: "Reception",
     place: "Bridal suite",
-    note: "Bride's preferred drink: rose or signature cocktail. Groom's preferred drink: signature cocktail or beer."
+    note: "Bride and groom private meal in the bridal suite."
   },
   {
     date: "Saturday, July 18",
@@ -497,7 +497,7 @@ const events = [
     priority: "important",
     category: "Reception",
     place: "The Farrell",
-    note: "Guests enter reception space."
+    note: "Guests enter the reception space."
   },
   {
     date: "Saturday, July 18",
@@ -517,7 +517,7 @@ const events = [
     priority: "critical",
     category: "Reception",
     place: "The Farrell",
-    note: "DJ plays 90 seconds of songs. Bride and Groom: This Will Be by Natalie Cole. Father and Bride: I Say a Little Prayer by Aretha Franklin. Mother and Groom: My Wish by Rascal Flatts."
+    note: "Bride and Groom: This Will Be by Natalie Cole. Father and Bride: I Say a Little Prayer by Aretha Franklin. Mother and Groom: My Wish by Rascal Flatts."
   },
   {
     date: "Saturday, July 18",
@@ -527,7 +527,7 @@ const events = [
     priority: "critical",
     category: "Toast",
     place: "The Farrell",
-    note: "Carlton toast. Keep notes ready before reception announcements."
+    note: "Carlton toast. Keep notes ready."
   },
   {
     date: "Saturday, July 18",
@@ -537,7 +537,7 @@ const events = [
     priority: "important",
     category: "Cake",
     place: "The Farrell",
-    note: "Save top tier of bride's cake. Cake not served to guests."
+    note: "Save the top tier. Bride's cake is not served to guests."
   },
   {
     date: "Saturday, July 18",
@@ -547,7 +547,7 @@ const events = [
     priority: "normal",
     category: "Catering",
     place: "The Farrell",
-    note: "Vendors go through buffet line: two planners and two photographers."
+    note: "Vendors go through the buffet line: two planners and two photographers."
   },
   {
     date: "Saturday, July 18",
@@ -557,7 +557,7 @@ const events = [
     priority: "normal",
     category: "Photography",
     place: "Outside The Farrell",
-    note: "Bride and groom photos outside The Farrell during the reception."
+    note: "Bride and groom photos outside The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -567,7 +567,7 @@ const events = [
     priority: "normal",
     category: "Catering",
     place: "The Farrell",
-    note: "Cookie Fix."
+    note: "Cookie Fix late-night snack pass."
   },
   {
     date: "Saturday, July 18",
@@ -577,17 +577,17 @@ const events = [
     priority: "normal",
     category: "Reception",
     place: "The Farrell",
-    note: "Bouquet toss at The Farrell, same time block as the late-night Cookie Fix snack pass."
+    note: "Bouquet toss at The Farrell."
   },
   {
     date: "Saturday, July 18",
     time: "10:00 PM",
-    title: "Reception stops and guests head outside for sparkler exit",
+    title: "Sparkler exit and departure for Ross Bridge",
     owner: "Family",
     priority: "important",
     category: "Exit",
-    place: "The Farrell",
-    note: "Bride and groom leave in classic car for private residence at 3015 Parkridge Dr."
+    place: "The Farrell to Ross Bridge",
+    note: "Reception stops and guests head outside for the sparkler exit. Bride and groom leave in the classic car for Ross Bridge."
   },
   {
     date: "Saturday, July 18",
@@ -631,10 +631,10 @@ const places = [
   {
     name: "Groomsmens' House",
     type: "Groom getting ready",
-    address: "3015 Parkridge Drive Apt 1",
+    address: "3015 Parkridge Drive Apt 1, Birmingham, AL 35209",
     phone: "Groom and groomsmen meet there at 11:00 AM.",
-    detail: "Bride and groom leave in classic car for this address after the sparkler exit.",
-    maps: "https://www.google.com/maps/search/?api=1&query=3015+Parkridge+Drive+Birmingham+AL"
+    detail: "Groom and groomsmen getting-ready location.",
+    maps: "https://www.google.com/maps/search/?api=1&query=3015+Parkridge+Drive+Apt+1+Birmingham+AL+35209"
   },
   {
     name: "Mr. Burch Formal Wear",
@@ -661,6 +661,14 @@ const places = [
     maps: "https://www.google.com/maps/search/?api=1&query=1630+2nd+Ave+S+Birmingham+AL+35233"
   },
   {
+    name: "Ross Bridge",
+    type: "Wedding-night destination",
+    address: "4000 Grand Ave, Birmingham, AL 35226",
+    phone: "Bride and groom depart for Ross Bridge after the sparkler exit.",
+    detail: "10:00 PM departure in the classic car.",
+    maps: "https://www.google.com/maps/search/?api=1&query=4000+Grand+Ave+Birmingham+AL+35226"
+  },
+  {
     name: "Engaged Wedding Library",
     type: "Personal item dropoff",
     address: "1018 Oxmoor Road, Homewood, AL 35209",
@@ -673,10 +681,10 @@ const places = [
 const contacts = [
   "Wedding coordinator: Symone Shaw-Denton, 205-902-0826",
   "Officiant: Steve Yeld, 205-401-0224",
-  "Hair and makeup: Mackenzie Teter, 205-305-5046",
+  "Hair and makeup: StyledXMackenzie, Mackenzie Teter, 205-305-5046, styledXMackenzie@gmail.com",
   "Photography: Dacy Lee Photography, 205-222-8838, dacyleephotography@gmail.com",
   "Entertainment: Verite Strings, Laura Raymond, 601-955-7049, veritestrings@gmail.com",
-  "Entertainment: DJ Lee J, contact info not listed in PDF",
+  "Entertainment: DJ Lee J, Lee, 205-422-1158",
   "Floral: Delta Flowers, Lori Beasley, 205-504-0871, deltaflowershvr@gmail.com",
   "Catering: La Paz, Jill Williams, 205-879-2286",
   "Cake: Chez Fon Fon, contact info not listed in PDF",
@@ -686,10 +694,10 @@ const contacts = [
 
 const pdfNotes = [
   "Bride getting ready address: 1517 14th Street South Birmingham, AL 35205",
-  "Photo location: 2719 19th St S, Homewood, AL 35209",
+  "Groom getting ready address: 3015 Parkridge Drive Apt 1, Birmingham, AL 35209",
   "Ceremony and reception address: 2719 19th St S, Homewood, AL 35209",
   "Wedding coordinator: Symone Shaw-Denton, 205-902-0826",
-  "Guest count: 131"
+  "Guest count: 124"
 ];
 
 const personalItems = [
@@ -858,6 +866,14 @@ function locationForEvent(event) {
     };
   }
 
+  if (place === "The Farrell to Ross Bridge") {
+    return {
+      name: "The Farrell to Ross Bridge",
+      address: "Pickup: 2719 19th St S, Homewood, AL 35209. Destination: 4000 Grand Ave, Birmingham, AL 35226",
+      maps: directionsLink("2719 19th St S, Homewood, AL 35209", "4000 Grand Ave, Birmingham, AL 35226")
+    };
+  }
+
   if (place.includes("The Farrell") || place === "Bridal suite" || place === "Outside The Farrell") {
     return {
       name: place === "The Farrell" ? "The Farrell" : `${place} at The Farrell`,
@@ -877,8 +893,8 @@ function locationForEvent(event) {
   if (place.includes("Groomsmens' House")) {
     return {
       name: "Groomsmens' House",
-      address: "3015 Parkridge Drive Apt 1, Birmingham, AL",
-      maps: mapsLink("3015 Parkridge Drive Apt 1, Birmingham, AL")
+      address: "3015 Parkridge Drive Apt 1, Birmingham, AL 35209",
+      maps: mapsLink("3015 Parkridge Drive Apt 1, Birmingham, AL 35209")
     };
   }
 

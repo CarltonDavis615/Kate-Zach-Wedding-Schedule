@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kate & Zach Wedding Schedule</title>
-    <link rel="stylesheet" href="styles.css?v=20260616-9" />
+    <link rel="stylesheet" href="styles.css?v=20260622-1" />
   </head>
   <body>
     <header class="app-header">
@@ -21,6 +21,8 @@
         <button class="tab" data-view="today">Now / Next</button>
         <button class="tab" data-view="items">Items</button>
         <button class="tab" data-view="places">Places</button>
+        <button class="tab" data-view="ceremony-layout">Ceremony Layout</button>
+        <button class="tab" data-view="reception-flip">Reception Flip</button>
         <button class="tab" data-view="pdf">Schedule PDF</button>
       </nav>
 
@@ -68,27 +70,43 @@
         <div id="itemsList" class="item-grid"></div>
       </section>
 
+      <section id="ceremony-layout" class="view">
+        <div class="section-title">
+          <h2>Ceremony Layout</h2>
+          <p>The Farrell ceremony setup reference.</p>
+        </div>
+        <div class="pdf-pages">
+          <figure>
+            <img src="assets/layouts/ceremony-layout.png" alt="Kate Davis wedding ceremony layout at The Farrell" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="reception-flip" class="view">
+        <div class="section-title">
+          <h2>Reception Flip</h2>
+          <p>The Farrell reception setup after the ceremony flip.</p>
+        </div>
+        <div class="pdf-pages">
+          <figure>
+            <img src="assets/layouts/reception-flip.png" alt="Kate Davis wedding reception flip layout at The Farrell" />
+          </figure>
+        </div>
+      </section>
+
       <section id="pdf" class="view">
         <div class="section-title">
-          <h2>Original PDF Backup</h2>
-          <p>The four original schedule pages, preserved as a backup reference.</p>
+          <h2>Updated Schedule PDF</h2>
+          <p>The two-page June 22 venue schedule.</p>
         </div>
         <div class="pdf-pages">
           <figure>
             <img src="assets/pdf-pages/page-1.png" alt="Original schedule PDF page 1" />
-            <figcaption>Page 1 of 4</figcaption>
+            <figcaption>Page 1 of 2</figcaption>
           </figure>
           <figure>
             <img src="assets/pdf-pages/page-2.png" alt="Original schedule PDF page 2" />
-            <figcaption>Page 2 of 4</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/pdf-pages/page-3.png" alt="Original schedule PDF page 3" />
-            <figcaption>Page 3 of 4</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/pdf-pages/page-4.png" alt="Original schedule PDF page 4" />
-            <figcaption>Page 4 of 4</figcaption>
+            <figcaption>Page 2 of 2</figcaption>
           </figure>
         </div>
       </section>
@@ -102,6 +120,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260616-9"></script>
+    <script src="app.js?v=20260622-1"></script>
   </body>
 </html>

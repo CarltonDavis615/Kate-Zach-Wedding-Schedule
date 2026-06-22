@@ -81,7 +81,7 @@ main {
   top: 0;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 8px;
   padding: 10px 0;
   background: rgba(251, 252, 251, 0.94);
