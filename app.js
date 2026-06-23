@@ -342,6 +342,16 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "3:00 PM",
+    title: "La Paz Catering arrives for food setup",
+    owner: "Vendor",
+    priority: "important",
+    category: "Catering",
+    place: "The Farrell",
+    note: "La Paz Catering arrives at The Farrell to set up food."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:00 PM",
     title: "Groom and groomsmen photos",
     owner: "Family",
     priority: "normal",
@@ -378,16 +388,6 @@ const events = [
     category: "Transportation",
     place: "The Airbnb to The Farrell",
     note: "Travel from The Airbnb to The Farrell."
-  },
-  {
-    date: "Saturday, July 18",
-    time: "4:00 PM",
-    title: "Catering and bartending arrive",
-    owner: "Vendor",
-    priority: "normal",
-    category: "Catering",
-    place: "The Farrell",
-    note: "La Paz catering and bartending arrive at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -438,6 +438,16 @@ const events = [
     category: "Photography",
     place: "The Farrell",
     note: "All pre-ceremony photos should be complete before the ceremony."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "5:00 PM",
+    title: "Food ready",
+    owner: "Vendor",
+    priority: "important",
+    category: "Catering",
+    place: "The Farrell",
+    note: "Food from La Paz Catering should be ready at The Farrell."
   },
   {
     date: "Saturday, July 18",
