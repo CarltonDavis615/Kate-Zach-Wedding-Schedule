@@ -40,6 +40,16 @@ const events = [
     note: "Call if timing gets tight: +1 (205) 871-3589."
   },
   {
+    date: "Thursday, July 16",
+    time: "4:00 PM",
+    title: "Meet John Pearson about paper lanterns",
+    owner: "Family",
+    priority: "important",
+    category: "Decor",
+    place: "The Farrell",
+    note: "Carlton and Kerri meet John Pearson at The Farrell to discuss hanging paper lanterns. Phone: 205-566-7175."
+  },
+  {
     date: "Friday, July 17",
     time: "5:00 PM",
     title: "Rehearsal",
