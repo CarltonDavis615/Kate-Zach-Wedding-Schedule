@@ -381,6 +381,16 @@ const events = [
   },
   {
     date: "Saturday, July 18",
+    time: "3:15 PM",
+    title: "Jade and Jeff drive bridesmaids to The Farrell",
+    owner: "Family",
+    priority: "important",
+    category: "Transportation",
+    place: "The Airbnb to The Farrell",
+    note: "Jade and Jeff can drive bridesmaids to The Farrell. Pickup: 1517 14th Street South, Birmingham, AL 35205. Dropoff: 2719 19th St S, Homewood, AL 35209."
+  },
+  {
+    date: "Saturday, July 18",
     time: "3:30 PM",
     title: "Groom's family photos",
     owner: "Family",
