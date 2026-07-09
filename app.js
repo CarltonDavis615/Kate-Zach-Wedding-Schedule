@@ -17,7 +17,7 @@ const events = [
     priority: "important",
     category: "Travel",
     place: "Nashville",
-    note: "Keep tux pickup, Airbnb address, ceremony clothes, toast notes, and father-of-the-bride items together."
+    note: "Keep tux pickup, Airbnb address, ceremony clothes, toast notes, and father-of-the-Bride items together."
   },
   {
     date: "Thursday, July 16",
@@ -82,7 +82,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "8:30 AM",
-    title: "Bride and bridesmaids meet up",
+    title: "Bride and Bridesmaids meet up",
     owner: "Family",
     priority: "normal",
     category: "Getting Ready",
@@ -237,7 +237,7 @@ const events = [
     priority: "normal",
     category: "Wardrobe",
     place: "Groomsmens' House",
-    note: "Mother of the Groom gets dressed before the groom and groomsmen dressing block."
+    note: "Mother of the Groom gets dressed before the Groom and groomsmen dressing block."
   },
   {
     date: "Saturday, July 18",
@@ -257,7 +257,7 @@ const events = [
     priority: "important",
     category: "Wardrobe",
     place: "The Airbnb",
-    note: "Mother of Bride and Sloan Wyse help bride with jewelry and shoes for photos."
+    note: "Mother of Bride and Sloan Wyse help Bride with jewelry and shoes for photos."
   },
   {
     date: "Saturday, July 18",
@@ -267,7 +267,7 @@ const events = [
     priority: "normal",
     category: "Wardrobe",
     place: "Groomsmens' House",
-    note: "FOG Stacey pins boutonniere on groom for photos."
+    note: "FOG Stacey pins boutonniere on Groom for photos."
   },
   {
     date: "Saturday, July 18",
@@ -277,7 +277,7 @@ const events = [
     priority: "normal",
     category: "Wardrobe",
     place: "The Airbnb",
-    note: "Bridesmaids get dressed after the bride."
+    note: "Bridesmaids get dressed after the Bride."
   },
   {
     date: "Saturday, July 18",
@@ -292,12 +292,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "2:00 PM",
-    title: "Bride's family photos and bridesmaids",
+    title: "Bride's family photos and Bridesmaids",
     owner: "Carlton",
     priority: "critical",
     category: "Photography",
     place: "The Airbnb",
-    note: "Father-of-the-bride family photo window."
+    note: "Father-of-the-Bride family photo window."
   },
   {
     date: "Saturday, July 18",
@@ -307,7 +307,7 @@ const events = [
     priority: "critical",
     category: "Cake",
     place: "The Farrell",
-    note: "Deliver the coconut cake by 2:30 PM. Cake stand provided by the bride."
+    note: "Deliver the coconut cake by 2:30 PM. Cake stand provided by the Bride."
   },
   {
     date: "Saturday, July 18",
@@ -372,7 +372,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "3:15 PM",
-    title: "Classic car takes bride and Father of the Bride to The Farrell",
+    title: "Classic car takes Bride and Father of the Bride to The Farrell",
     owner: "Carlton",
     priority: "critical",
     category: "Transportation",
@@ -382,12 +382,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "3:15 PM",
-    title: "Jade and Jeff drive bridesmaids to The Farrell",
+    title: "Jade and Jeff drive Bridesmaids to The Farrell",
     owner: "Family",
     priority: "important",
     category: "Transportation",
     place: "The Airbnb to The Farrell",
-    note: "Jade and Jeff can drive bridesmaids to The Farrell. Pickup: 1517 14th Street South, Birmingham, AL 35205. Dropoff: 2719 19th St S, Homewood, AL 35209."
+    note: "Jade and Jeff can drive Bridesmaids to The Farrell. Pickup: 1517 14th Street South, Birmingham, AL 35205. Dropoff: 2719 19th St S, Homewood, AL 35209."
   },
   {
     date: "Saturday, July 18",
@@ -398,16 +398,6 @@ const events = [
     category: "Photography",
     place: "The Farrell",
     note: "Groom's family photos at The Farrell."
-  },
-  {
-    date: "Saturday, July 18",
-    time: "3:45 PM",
-    title: "Bride and bridesmaids travel to The Farrell",
-    owner: "Family",
-    priority: "important",
-    category: "Transportation",
-    place: "The Airbnb to The Farrell",
-    note: "Travel from The Airbnb to The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -487,7 +477,7 @@ const events = [
     priority: "important",
     category: "Venue",
     place: "The Farrell",
-    note: "Place bridesmaids bouquets on highboy tables. Decor to Adore removes draping and resets tables. Florist resets florals as needed. Engaged team sets place cards."
+    note: "Place Bridesmaids bouquets on highboy tables. Decor to Adore removes draping and resets tables. Florist resets florals as needed. Engaged team sets place cards."
   },
   {
     date: "Saturday, July 18",
@@ -512,12 +502,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "6:00 PM - 6:30 PM",
-    title: "Bride and groom private meal",
+    title: "Bride and Groom private meal",
     owner: "Family",
     priority: "normal",
     category: "Reception",
     place: "Bridal suite",
-    note: "Bride and groom private meal in the bridal suite."
+    note: "Bride and Groom private meal in the bridal suite."
   },
   {
     date: "Saturday, July 18",
@@ -532,7 +522,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "6:40 PM",
-    title: "Bride and groom announced into reception",
+    title: "Bride and Groom announced into reception",
     owner: "Family",
     priority: "important",
     category: "Reception",
@@ -562,7 +552,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "6:52 PM",
-    title: "Bride and groom cut bride's cake",
+    title: "Bride and Groom cut Bride's cake",
     owner: "Family",
     priority: "important",
     category: "Cake",
@@ -582,12 +572,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "7:30 PM - 8:30 PM",
-    title: "Bride and groom photos outside",
+    title: "Bride and Groom photos outside",
     owner: "Family",
     priority: "normal",
     category: "Photography",
     place: "Outside The Farrell",
-    note: "Bride and groom photos outside The Farrell."
+    note: "Bride and Groom photos outside The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -617,7 +607,7 @@ const events = [
     priority: "important",
     category: "Exit",
     place: "The Farrell to Ross Bridge",
-    note: "Reception stops and guests head outside for the sparkler exit. Bride and groom leave in the classic car for Ross Bridge."
+    note: "Reception stops and guests head outside for the sparkler exit. Bride and Groom leave in the classic car for Ross Bridge."
   },
   {
     date: "Saturday, July 18",
@@ -654,8 +644,8 @@ const places = [
     name: "The Airbnb",
     type: "Getting ready",
     address: "1517 14th Street South, Birmingham, AL 35205",
-    phone: "Bride and bridesmaids meet there at 8:30 AM.",
-    detail: "Photographers arrive here at 12:30 PM. Classic car picks up bride and Carlton here at 3:15 PM.",
+    phone: "Bride and Bridesmaids meet there at 8:30 AM.",
+    detail: "Photographers arrive here at 12:30 PM. Classic car picks up Bride and Carlton here at 3:15 PM.",
     maps: "https://www.google.com/maps/search/?api=1&query=1517+14th+Street+South+Birmingham+AL+35205"
   },
   {
@@ -694,7 +684,7 @@ const places = [
     name: "Ross Bridge",
     type: "Wedding-night destination",
     address: "4000 Grand Ave, Birmingham, AL 35226",
-    phone: "Bride and groom depart for Ross Bridge after the sparkler exit.",
+    phone: "Bride and Groom depart for Ross Bridge after the sparkler exit.",
     detail: "10:00 PM departure in the classic car.",
     maps: "https://www.google.com/maps/search/?api=1&query=4000+Grand+Ave+Birmingham+AL+35226"
   },
