@@ -152,7 +152,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "11:00 AM",
-    title: "Groom and groomsmen meet up",
+    title: "Groom and Groomsmen meet up",
     owner: "Family",
     priority: "normal",
     category: "Getting Ready",
@@ -237,7 +237,7 @@ const events = [
     priority: "normal",
     category: "Wardrobe",
     place: "Groomsmens' House",
-    note: "Mother of the Groom gets dressed before the Groom and groomsmen dressing block."
+    note: "Mother of the Groom gets dressed before the Groom and Groomsmen dressing block."
   },
   {
     date: "Saturday, July 18",
@@ -262,7 +262,7 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "1:15 PM",
-    title: "Groom and groomsmen get dressed",
+    title: "Groom and Groomsmen get dressed",
     owner: "Family",
     priority: "normal",
     category: "Wardrobe",
@@ -321,13 +321,13 @@ const events = [
   },
   {
     date: "Saturday, July 18",
-    time: "2:45 PM",
-    title: "Groom and groomsmen arrive",
+    time: "2:30 PM",
+    title: "Groom and Groomsmen arrive",
     owner: "Family",
     priority: "normal",
     category: "Arrival",
     place: "The Farrell",
-    note: "Groom and groomsmen arrive at The Farrell."
+    note: "Groom and Groomsmen arrive at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -337,7 +337,7 @@ const events = [
     priority: "important",
     category: "Transportation",
     place: "The Airbnb",
-    note: "Coats Classic Cars arrives at The Airbnb."
+    note: "Coats Classic Cars arrives at The Airbnb. Bride puts overnight bag in car."
   },
   {
     date: "Saturday, July 18",
@@ -362,12 +362,12 @@ const events = [
   {
     date: "Saturday, July 18",
     time: "3:00 PM",
-    title: "Groom and groomsmen photos",
+    title: "Groom and Groomsmen photos",
     owner: "Family",
     priority: "normal",
     category: "Photography",
     place: "The Farrell",
-    note: "Groom and groomsmen photos at The Farrell."
+    note: "Groom and Groomsmen photos at The Farrell."
   },
   {
     date: "Saturday, July 18",
@@ -398,6 +398,16 @@ const events = [
     category: "Photography",
     place: "The Farrell",
     note: "Groom's family photos at The Farrell."
+  },
+  {
+    date: "Saturday, July 18",
+    time: "3:30 PM",
+    title: "Bride arrives at The Farrell",
+    owner: "Family",
+    priority: "important",
+    category: "Arrival",
+    place: "The Farrell",
+    note: "Bride arrives at The Farrell. Groom should be tucked away before she arrives."
   },
   {
     date: "Saturday, July 18",
@@ -652,8 +662,8 @@ const places = [
     name: "Groomsmens' House",
     type: "Groom getting ready",
     address: "3015 Parkridge Drive Apt 1, Birmingham, AL 35209",
-    phone: "Groom and groomsmen meet there at 11:00 AM.",
-    detail: "Groom and groomsmen getting-ready location.",
+    phone: "Groom and Groomsmen meet there at 11:00 AM.",
+    detail: "Groom and Groomsmen getting-ready location.",
     maps: "https://www.google.com/maps/search/?api=1&query=3015+Parkridge+Drive+Apt+1+Birmingham+AL+35209"
   },
   {
