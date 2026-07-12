@@ -693,11 +693,11 @@ const contacts = [
   "Officiant: Steve Yeld, 205-401-0224",
   "Hair and makeup: StyledXMackenzie, Mackenzie Teter, 205-305-5046, styledXMackenzie@gmail.com",
   "Photography: Dacy Lee Photography, 205-222-8838, dacyleephotography@gmail.com",
-  "Entertainment: Verite Strings, Laura Raymond, 601-955-7049, veritestrings@gmail.com",
+  "Strings: Verite Strings, Laura Raymond, 601-955-7049, veritestrings@gmail.com",
   "Entertainment: DJ Lee J, Lee, 205-422-1158",
   "Floral: Delta Flowers, Lori Beasley, 205-504-0871, deltaflowershvr@gmail.com",
   "Catering: La Paz, Jill Williams, 205-879-2286",
-  "Cake: Chez Fon Fon, contact info not listed in PDF",
+  "Cake: Chez Fon Fon, 205-939-3221",
   "Rentals: Decor to Adore, Laura Williams, 205-637-8695, laura@decortoadore.com",
   "Transportation: Coats Classic Cars, Kirsten Hansen-Dreijer, 205-413-0480, kirsten@coatscars.com"
 ];
