@@ -1149,19 +1149,7 @@ function renderPlaces() {
     </article>
   `;
 
-  const notesMarkup = `
-    <article class="place contact-list">
-      <div class="meta">
-        <span class="pill">PDF notes</span>
-      </div>
-      <h3>Original Schedule Notes</h3>
-      <ul>
-        ${pdfNotes.map((note) => `<li>${note}</li>`).join("")}
-      </ul>
-    </article>
-  `;
-
-  placeCards.innerHTML = placeMarkup + contactMarkup + notesMarkup;
+  placeCards.innerHTML = placeMarkup + contactMarkup;
 }
 
 function renderItems() {
