@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kate & Zach Wedding Schedule</title>
-    <link rel="stylesheet" href="styles.css?v=20260709-3" />
+    <link rel="stylesheet" href="styles.css?v=20260712-1" />
   </head>
   <body>
     <header class="app-header">
@@ -19,31 +19,13 @@
       <nav class="tabs" aria-label="Views">
         <button class="tab is-active" data-view="schedule">Full Schedule</button>
         <button class="tab" data-view="today">Now / Next</button>
+        <button class="tab" data-view="search">Search</button>
         <button class="tab" data-view="places">Places</button>
         <button class="tab" data-view="ceremony-layout">Ceremony Layout</button>
         <button class="tab" data-view="reception-flip">Reception Flip</button>
         <button class="tab" data-view="pdf">Schedule PDF</button>
         <button class="tab" data-view="items">Items</button>
       </nav>
-
-      <section class="toolbar" aria-label="Schedule filters">
-        <label>
-          <span>Filter</span>
-          <select id="ownerFilter">
-            <option value="all">Everyone</option>
-            <option value="Carlton">Carlton</option>
-            <option value="Kate">Kate</option>
-            <option value="Kerri">Kerri</option>
-            <option value="Sloan">Sloan</option>
-            <option value="Jade">Jade</option>
-            <option value="Family">Family</option>
-          </select>
-        </label>
-        <label>
-          <span>Search</span>
-          <input id="searchBox" type="search" placeholder="cake, tux, photos, venue..." />
-        </label>
-      </section>
 
       <section id="today" class="view">
         <div class="section-title">
@@ -60,6 +42,20 @@
           <p>The PDF timeline can be added here as events are confirmed.</p>
         </div>
         <div id="scheduleList" class="timeline"></div>
+      </section>
+
+      <section id="search" class="view">
+        <div class="section-title">
+          <h2>Search</h2>
+          <p>Search the schedule, places, notes, contacts, and items.</p>
+        </div>
+        <div class="search-panel">
+          <label>
+            <span>Search</span>
+            <input id="searchBox" type="search" placeholder="cake, tux, photos, venue..." />
+          </label>
+        </div>
+        <div id="searchResults" class="timeline"></div>
       </section>
 
       <section id="items" class="view">
@@ -120,6 +116,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260709-3"></script>
+    <script src="app.js?v=20260712-1"></script>
   </body>
 </html>

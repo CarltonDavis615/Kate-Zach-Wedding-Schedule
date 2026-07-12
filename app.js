@@ -11,28 +11,8 @@ const events = [
   },
   {
     date: "Thursday, July 16",
-    time: "Before noon",
-    title: "Pack wedding weekend essentials",
-    owner: "Carlton",
-    priority: "important",
-    category: "Travel",
-    place: "Nashville",
-    note: "Keep tux pickup, Airbnb address, ceremony clothes, toast notes, and father-of-the-Bride items together."
-  },
-  {
-    date: "Thursday, July 16",
-    time: "Noon",
-    title: "Leave Nashville for Birmingham",
-    owner: "Carlton",
-    priority: "critical",
-    category: "Travel",
-    place: "Nashville to Birmingham",
-    note: "Carlton and Jade plan to leave around noon and spend Thursday night at The Airbnb."
-  },
-  {
-    date: "Thursday, July 16",
     time: "After arrival",
-    title: "Pick up tux",
+    title: "Carlton pick up tux",
     owner: "Carlton",
     priority: "critical",
     category: "Wardrobe",
@@ -756,8 +736,8 @@ const packUpItems = [
   "Leftover Food"
 ];
 
-const ownerFilter = document.querySelector("#ownerFilter");
 const searchBox = document.querySelector("#searchBox");
+const searchResults = document.querySelector("#searchResults");
 const nextCards = document.querySelector("#nextCards");
 const scheduleList = document.querySelector("#scheduleList");
 const itemsList = document.querySelector("#itemsList");
@@ -772,19 +752,12 @@ const dateLookup = {
   "Sunday, July 19": { year: 2026, month: 6, day: 19 }
 };
 
-function eventMatches(event) {
-  const ownerValue = ownerFilter.value;
-  const searchValue = searchBox.value.trim().toLowerCase();
-  const haystack = `${event.date} ${event.time} ${event.title} ${event.owner} ${event.category} ${event.place} ${event.note}`.toLowerCase();
-  const personFilters = {
-    Kate: ["kate", "bride"],
-    Sloan: ["sloan"],
-    Kerri: ["kerri", "mob", "mother of bride", "mother of the bride"]
-  };
-  const ownerMatch = personFilters[ownerValue]
-    ? personFilters[ownerValue].some((term) => haystack.includes(term))
-    : ownerValue === "all" || event.owner === ownerValue;
-  return ownerMatch && (!searchValue || haystack.includes(searchValue));
+function eventHaystack(event) {
+  return `${event.date} ${event.time} ${event.title} ${event.place} ${event.note}`.toLowerCase();
+}
+
+function eventMatchesSearch(event, searchValue) {
+  return eventHaystack(event).includes(searchValue);
 }
 
 function startTimeFromLabel(timeLabel) {
@@ -1007,7 +980,7 @@ function contactItemMarkup(contact) {
 function nowNextMarkup(item) {
   const event = item.event;
   return `
-    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}" data-state="${item.state}">
+    <article class="event" data-priority="${event.priority}" data-state="${item.state}">
       <div>
         <div class="time">${formatNowNextTime(item)}</div>
         <div class="owner">${event.date} - ${event.time}</div>
@@ -1016,10 +989,6 @@ function nowNextMarkup(item) {
         <h3>${event.title}</h3>
         <p>${event.note}</p>
         ${locationMarkup(event)}
-      </div>
-      <div class="meta">
-        <span class="pill">${event.owner}</span>
-        <span class="pill">${event.category}</span>
       </div>
     </article>
   `;
@@ -1054,7 +1023,7 @@ function renderNowNext() {
 
 function eventMarkup(event) {
   return `
-    <article class="event" data-owner="${event.owner}" data-priority="${event.priority}">
+    <article class="event" data-priority="${event.priority}">
       <div>
         <div class="time">${event.date}</div>
         <div class="owner">${event.time}</div>
@@ -1064,21 +1033,94 @@ function eventMarkup(event) {
         <p>${event.note}</p>
         ${locationMarkup(event)}
       </div>
-      <div class="meta">
-        <span class="pill">${event.owner}</span>
-        <span class="pill">${event.category}</span>
-      </div>
     </article>
   `;
 }
 
 function renderEvents() {
-  const filtered = events.filter(eventMatches).sort(byScheduleTime);
-
-  scheduleList.innerHTML = filtered.length
-    ? filtered.map(eventMarkup).join("")
-    : `<div class="empty">No items match that filter yet.</div>`;
+  scheduleList.innerHTML = events.sort(byScheduleTime).map(eventMarkup).join("");
   renderNowNext();
+}
+
+function renderSearch() {
+  const searchValue = searchBox.value.trim().toLowerCase();
+
+  if (!searchValue) {
+    searchResults.innerHTML = `<div class="empty">Enter a word or name to search the schedule, places, contacts, notes, or items.</div>`;
+    return;
+  }
+
+  const eventMatches = events
+    .filter((event) => eventMatchesSearch(event, searchValue))
+    .sort(byScheduleTime)
+    .map(eventMarkup);
+
+  const placeMatches = places
+    .filter((place) => `${place.name} ${place.type} ${place.address} ${place.phone} ${place.detail}`.toLowerCase().includes(searchValue))
+    .map((place) => `
+      <article class="event">
+        <div>
+          <div class="time">Place</div>
+          <div class="owner">${place.type}</div>
+        </div>
+        <div>
+          <h3>${place.name}</h3>
+          <p>${place.address}</p>
+          <p>${place.phone}</p>
+          <p>${place.detail}</p>
+          <div class="event-location">
+            <a href="${place.maps}" target="_blank" rel="noreferrer">Open map</a>
+          </div>
+        </div>
+      </article>
+    `);
+
+  const contactMatches = contacts
+    .filter((contact) => contact.toLowerCase().includes(searchValue))
+    .map((contact) => `
+      <article class="event">
+        <div>
+          <div class="time">Contact</div>
+        </div>
+        <div>
+          <h3>${contact.split(":")[0]}</h3>
+          <p>${contact.includes(":") ? contact.split(":").slice(1).join(":").trim() : contact}</p>
+        </div>
+      </article>
+    `);
+
+  const noteMatches = pdfNotes
+    .filter((note) => note.toLowerCase().includes(searchValue))
+    .map((note) => `
+      <article class="event">
+        <div>
+          <div class="time">Note</div>
+        </div>
+        <div>
+          <h3>Schedule note</h3>
+          <p>${note}</p>
+        </div>
+      </article>
+    `);
+
+  const itemMatches = personalItems.concat(packUpItems)
+    .filter((item) => item.toLowerCase().includes(searchValue))
+    .map((item) => `
+      <article class="event">
+        <div>
+          <div class="time">Item</div>
+        </div>
+        <div>
+          <h3>${item}</h3>
+        </div>
+      </article>
+    `);
+
+  const matches = eventMatches.concat(placeMatches, contactMatches, noteMatches, itemMatches);
+
+  searchResults.innerHTML = matches.length
+    ? matches.join("")
+    : `<div class="empty">No results match that search.</div>`;
 }
 
 function renderPlaces() {
@@ -1153,10 +1195,10 @@ document.querySelectorAll(".tab").forEach((tab) => {
   });
 });
 
-ownerFilter.addEventListener("change", renderEvents);
-searchBox.addEventListener("input", renderEvents);
+searchBox.addEventListener("input", renderSearch);
 
 renderEvents();
+renderSearch();
 renderPlaces();
 renderItems();
 setInterval(renderNowNext, 60000);

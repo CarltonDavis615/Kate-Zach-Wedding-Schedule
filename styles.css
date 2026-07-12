@@ -89,8 +89,7 @@ main {
 }
 
 button,
-input,
-select {
+input {
   font: inherit;
 }
 
@@ -110,14 +109,11 @@ select {
   color: white;
 }
 
-.toolbar {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 12px;
-  margin: 8px 0 22px;
+.search-panel {
+  margin: 8px 0 18px;
 }
 
-.toolbar label {
+.search-panel label {
   display: grid;
   gap: 6px;
   color: var(--muted);
@@ -125,8 +121,7 @@ select {
   font-weight: 750;
 }
 
-.toolbar input,
-.toolbar select {
+.search-panel input {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--line);
@@ -177,10 +172,6 @@ select {
 
 .event[data-priority="important"] {
   border-left-color: var(--gold);
-}
-
-.event[data-owner="Jade"] {
-  border-left-color: var(--blue);
 }
 
 .meta {
@@ -263,7 +254,7 @@ select {
 
 .event {
   display: grid;
-  grid-template-columns: 130px minmax(0, 1fr) auto;
+  grid-template-columns: 130px minmax(0, 1fr);
   gap: 16px;
   align-items: center;
   padding: 14px 16px;
@@ -276,10 +267,6 @@ select {
 
 .event[data-priority="important"] {
   border-left-color: var(--gold);
-}
-
-.event[data-owner="Jade"] {
-  border-left-color: var(--blue);
 }
 
 .event[data-state="ended"] {
@@ -448,7 +435,6 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .toolbar,
   .item-grid,
   .place-grid,
   .contact-list ul {
