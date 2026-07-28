@@ -4,32 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kate & Zach Wedding Schedule</title>
-    <link rel="stylesheet" href="styles.css?v=20260712-3" />
+    <link rel="stylesheet" href="styles.css?v=20260728-10" />
   </head>
   <body>
     <header class="app-header">
       <div>
         <p class="eyebrow">July 18, 2026</p>
         <h1>Kate & Zach<br />Wedding Schedule</h1>
-        <p class="subhead">The full weekend schedule in one place.</p>
       </div>
     </header>
 
     <main>
       <nav class="tabs" aria-label="Views">
-        <button class="tab is-active" data-view="schedule">Full Schedule</button>
-        <button class="tab" data-view="today">Now / Next</button>
-        <button class="tab" data-view="search">Search</button>
-        <button class="tab" data-view="places">Places</button>
-        <button class="tab" data-view="ceremony-layout">Ceremony Layout</button>
-        <button class="tab" data-view="reception-flip">Reception Flip</button>
-        <button class="tab" data-view="pdf">Schedule PDF</button>
-        <button class="tab" data-view="items">Items</button>
+        <div class="tab-row">
+          <button class="tab is-active" data-view="schedule">Full Schedule</button>
+          <button class="tab" data-view="today">Live Schedule</button>
+          <button class="tab" data-view="search">Search</button>
+        </div>
+        <div class="tab-row">
+          <button class="tab" data-view="places">Places</button>
+          <button class="tab" data-view="ceremony-layout">Ceremony Layout</button>
+          <button class="tab" data-view="reception-flip">Reception Flip</button>
+        </div>
       </nav>
 
       <section id="today" class="view">
         <div class="section-title">
-          <h2>Now / Next</h2>
+          <h2>Live Schedule</h2>
           <p>Uses this device's clock and refreshes automatically.</p>
         </div>
         <div id="clockStatus" class="clock-status"></div>
@@ -39,7 +40,6 @@
       <section id="schedule" class="view is-active">
         <div class="section-title">
           <h2>Full Schedule</h2>
-          <p>The PDF timeline can be added here as events are confirmed.</p>
         </div>
         <div id="scheduleList" class="timeline"></div>
       </section>
@@ -81,7 +81,7 @@
       <section id="reception-flip" class="view">
         <div class="section-title">
           <h2>Reception Flip</h2>
-          <p>The Farrell reception setup after the ceremony flip.</p>
+          <p>The Farrell reception setup after the ceremony.</p>
         </div>
         <div class="pdf-pages">
           <figure>
@@ -116,6 +116,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260712-3"></script>
+    <script src="app.js?v=20260728-10"></script>
   </body>
 </html>
